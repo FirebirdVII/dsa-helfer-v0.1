@@ -1,0 +1,76 @@
+/* HeroesComponent's private CSS styles */
+.heroes {
+  margin: 0 0 2em 0;
+  list-style-type: none;
+  padding: 0;
+}
+.heroes li {
+  position: relative;
+  cursor: pointer;
+  background-color: #EEE;
+  margin: .5em 0;
+  border-radius: 4px;
+  height: 5em;
+}
+
+.heroes li:hover {
+  color: #607D8B;
+  background-color: #DDD;
+  left: .1em;
+}
+
+
+.heroes #idbadge {
+  color: white;
+  background-color: #607D8B;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.heroes #deletebutton {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.heroes #heroname {
+  font-size: 1.3rem;
+
+}
+
+.heroes li a {
+  border-radius: 0;
+}
+
+.heroes #heroDetailsLink {
+    align-items: center; 
+    display: flex; 
+    justify-content: center; 
+    font-size: 1.3rem;
+}
+
+.heroes #heroeslinks {
+  padding: 0;
+}
+
+.heroes .heroeslink {
+  height: 50%;
+  border-radius: 0;
+  font-size: 1.1rem;
+}
+
+.presetHeroesButton  {
+  margin: 0.5em;
+}
+
+#addheroform span, #addheroform input {
+  margin-right: 1em;
+}
+
+.lepbutton {
+  font-size: 0.6rem;
+  padding: 0.4em 0.7em;
+}
+
+.schmerzbadge {
+  margin-left: 0.1em;
+}

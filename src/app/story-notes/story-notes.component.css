@@ -1,0 +1,19 @@
+.form .form-group button {
+    margin-top: 0.5em;
+}
+
+#noteslist li {
+    margin-bottom: 1em;
+}
+
+#noteslist li:last-child {
+    margin-bottom: 0;
+}
+
+#noteslist li:first-child {
+    margin-top: 1em;
+}
+
+#noteslist p {
+    white-space: pre-wrap;
+}

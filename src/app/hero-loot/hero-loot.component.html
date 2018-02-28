@@ -1,0 +1,58 @@
+<div class="card">
+  <div class="card-header">Lootpackages</div>
+  <div class="card-body">
+    <div class="card-block">
+        <h4 class="card-title">Lootgenerator</h4>
+      <div class="row align-items-center card-text">
+        <div class="slidecontainer col-sm-8 align-items-center">
+          <label for="myRange" class="col-sm-3">Loot-Wert:</label>
+          <input type="range" min="1" max="5" value="1" class="slider col-sm-8" id="myRange">
+        </div>
+        <button type="button" (click)="compileLootPackage()" class="btn btn-success col-sm-3">Lootpackage generieren</button> 
+      </div>
+
+      <div class="row" id="loottables">
+        <ul class="loot col-sm-4 list-group">
+          <ng-container *ngFor="let loot of currentLootPackage; let i = index" class="row align-items-center">
+            <li *ngIf="loot.rarity == 0" class="list-group-item">{{ loot.name }}</li>
+          </ng-container>
+        </ul>
+        <ul class="loot col-sm-4 list-group">
+          <ng-container *ngFor="let loot of currentLootPackage; let i = index" class="row align-items-center">
+            <li *ngIf="loot.rarity == 1" class="list-group-item">{{ loot.name }}</li>
+          </ng-container>
+        </ul>
+        <ul class="loot col-sm-4 list-group">
+          <ng-container *ngFor="let loot of currentLootPackage; let i = index" class="row align-items-center">
+            <li *ngIf="loot.rarity == 2" class="list-group-item">{{ loot.name }}</li>
+          </ng-container>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<!--
+
+      <ul class="loot col-sm-6 list-group">
+        <li *ngFor="let loot of currentLootPackage; let i = index" class="row align-items-center list-group-item">{{ loot.name }}</li>
+    </ul>
+-->
+
+  <!--
+  <div class="row">
+  <ul class="loot col-sm-4">
+    <li *ngFor="let loot of randomLoot0; let i = index" class="row align-items-center">{{ loot.name }}</li>
+  </ul>
+
+  <ul class="loot col-sm-4">
+    <li *ngFor="let loot of randomLoot1; let i = index" class="row align-items-center">{{ loot.name }}
+</li>
+  </ul>
+
+  <ul class="loot col-sm-4">
+    <li *ngFor="let loot of randomLoot2; let i = index" class="row align-items-center">{{ loot.name }}
+</li>
+  </ul>
+</div>
+-->
+

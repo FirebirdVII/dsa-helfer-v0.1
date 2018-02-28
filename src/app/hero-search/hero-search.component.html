@@ -1,0 +1,13 @@
+<div id="search-component">
+  <h4>Heldensuche</h4>
+
+  <input #searchBox id="search-box" class="col-sm-5" (keyup)="search(searchBox.value)" />
+
+  <ul class="search-result">
+    <li *ngFor="let hero of heroes$ | async" class="col-sm-5">
+      <a routerLink="/detail/{{hero.id}}">
+        {{hero.name}}
+      </a>
+    </li>
+  </ul>
+</div>

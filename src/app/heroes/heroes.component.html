@@ -1,0 +1,128 @@
+<h2>Helden, NPCs und andere Lebewesen</h2>
+
+<div class="row align-items-center" id="addheroform">
+    <span>Neuer Held:</span>
+    <input #heroName placeholder="Name" class="col-sm-3"/>
+
+  <!-- (click) passes input value to add() and then clears the input -->
+  <button type="button" class="btn btn-secondary btn-sm" (click)="add(heroName.value); heroName.value=''">
+    hinzufügen
+  </button>
+
+
+</div>
+
+<div class="row">
+  <button type="button" [disabled]="disabledHeroes" class="btn btn-outline-success presetHeroesButton" id="addAltorf" (click)="addAltdorf()">
+    Altdorf
+  </button>
+  <button type="button" [disabled]="disabledHeroes" class="btn btn-outline-warning presetHeroesButton" id="addReunion" (click)="addReunion()">
+    Reunion
+  </button>
+  <button type="button" [disabled]="disabledHeroes" class="btn btn-outline-primary presetHeroesButton" id="addFekide" (click)="addFekide()">
+    Feki.de
+  </button>
+</div>
+
+<div class="panel panel-success">
+    <div class="panel-heading">Am Kampf beteiligt</div>
+    <div class="panel-body" dnd-sortable-container [dropZones]="['boxers-zone']" [sortableData]="kampf">
+      <ul class="heroes">
+        <li *ngFor="let hero of kampf; let i = index" dnd-sortable [sortableIndex]="i" class="row align-items-center">
+          <button class="col-sm-1 btn h-100" id="idbadge">{{hero.id}}</button>
+          <div class="col-sm-3">
+            <div id="heroname">{{hero.name}}</div>
+            <span class="badge"><fa name="bolt"> </fa> {{hero.attacke}}</span>
+          </div>
+          <div id="heroesbadges" class="col-sm-4">
+              <span class="badge">INI: {{hero.ini}}</span>
+              <span class="badge">VW: {{hero.vw}}</span>  
+              <span class="badge">RS: {{hero.rs}}</span>  
+              <span class="badge">{{hero.werte}}</span> 
+                            
+          </div> 
+
+          <div class="col-sm-2">
+
+              <span class="badge">Max-LeP: {{hero.maxlep}}</span><br>
+              <span class="badge">LeP: {{hero.lep}}</span>  
+              <button type="button" class="btn btn-sm btn-outline-success lepbutton" title="Plus LeP" (click)="plusOneLeP(hero)"><fa name="heart"></fa></button>
+              <button type="button" class="btn btn-sm btn-outline-danger lepbutton" title="Minus LeP" (click)="minusOneLeP(hero)"><fa name="heart-o"></fa></button>
+              <span class="badge badge-success schmerzbadge" *ngIf="((hero.lep/hero.maxlep) <= 0.75) && ((hero.lep/hero.maxlep) > 0.5) && (hero.lep > 5)">1</span>
+              <span class="badge badge-warning schmerzbadge" *ngIf="((hero.lep/hero.maxlep) <= 0.5) && ((hero.lep/hero.maxlep) > 0.25) && (hero.lep > 5)">2</span>
+              <span class="badge badge-danger schmerzbadge" *ngIf="((hero.lep/hero.maxlep) <= 0.25) && (hero.lep > 5)">3</span>
+              <span class="badge badge-dark schmerzbadge" *ngIf="hero.lep <= 5">4</span>
+
+          </div>            
+          <div class="w-100 col-sm-1" id="heroeslinks">
+              <a routerLink="/detail/{{hero.id}}" class="heroeslink w-100 h-50 btn btn-outline-info" role="button">
+                <fa name="pencil-square-o"></fa>
+              </a>
+              <button (click)="deleteItemFromKampf(hero)" class="heroeslink w-100 h-50 btn btn-outline-info" type="button">
+                <fa name="minus-square"></fa>
+              </button>
+          </div>
+          <button type="button" class="btn btn-dark col-sm-1 h-100" id="deletebutton" title="delete hero"
+          (click)="delete(hero)">X</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+<div class="panel panel-warning">
+  <div class="panel-heading">Verfügbare Helden und Gegner</div>
+  <div class="panel-body" dnd-sortable-container [dropZones]="['boxers-zone']" [sortableData]="heroes">
+    <ul class="heroes" id="accordion" role="tablist" aria-multiselectable="true">
+      <li *ngFor="let hero of heroes; let i = index" class="row align-items-center" dnd-sortable [sortableIndex]="i">
+        <button class="col-sm-1 btn h-100" id="idbadge">{{hero.id}}</button>
+        <div class="col-sm-3">
+            <div id="heroname">{{hero.name}}</div>
+            <span class="badge"><fa name="bolt"> </fa> {{hero.attacke}}</span>
+          </div>
+        <div id="heroesbadges" class="col-sm-4">
+              <span class="badge">INI: {{hero.ini}}</span>
+              <span class="badge">VW: {{hero.vw}}</span>  
+              <span class="badge">RS: {{hero.rs}}</span>  
+              <span class="badge">{{hero.werte}}</span> 
+                            
+          </div> 
+
+          <div class="col-sm-2">
+
+              <span class="badge">Max-LeP: {{hero.maxlep}}</span><br>
+              <span class="badge">LeP: {{hero.lep}}</span>  
+              <button type="button" class="btn btn-sm btn-outline-success lepbutton" title="Plus LeP" (click)="plusOneLeP(hero)"><fa name="heart"></fa></button>
+              <button type="button" class="btn btn-sm btn-outline-danger lepbutton" title="Minus LeP" (click)="minusOneLeP(hero)"><fa name="heart-o"></fa></button>
+              <span class="badge badge-success schmerzbadge" *ngIf="((hero.lep/hero.maxlep) <= 0.75) && ((hero.lep/hero.maxlep) > 0.5) && (hero.lep > 5)">1</span>
+              <span class="badge badge-warning schmerzbadge" *ngIf="((hero.lep/hero.maxlep) <= 0.5) && ((hero.lep/hero.maxlep) > 0.25) && (hero.lep > 5)">2</span>
+              <span class="badge badge-danger schmerzbadge" *ngIf="((hero.lep/hero.maxlep) <= 0.25) && (hero.lep > 5)">3</span>
+              <span class="badge badge-dark schmerzbadge" *ngIf="hero.lep <= 5">4</span>
+
+          </div>
+          <div class="w-100 col-sm-1" id="heroeslinks">
+            <a routerLink="/detail/{{hero.id}}" class="heroeslink w-100 h-50 btn btn-outline-info" role="button">
+              <fa name="pencil-square-o"></fa>
+            </a>
+            <button (click)="addItemToKampf(hero)" class="heroeslink w-100 h-50 btn btn-outline-info" type="button">
+              <fa name="plus-square"></fa>
+            </button>
+          </div>
+        <button type="button" class="btn btn-dark col-sm-1 h-100" id="deletebutton" title="delete hero"
+        (click)="delete(hero)">X</button>
+
+
+
+
+
+
+
+
+
+
+
+
+      </li>
+    </ul>
+  </div>
+</div>
+

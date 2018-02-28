@@ -1,0 +1,55 @@
+
+
+<!--
+<ul class="events">
+  <li *ngFor="let event of events; let i = index" class="row align-items-center">{{ event.event }}</li>
+</ul>
+-->
+
+<div id="terrainbuttonbar" class="row align-items-center btn-group col-sm-12">
+  <button role="button" class="btn btn-city col-sm-2" (click)="getRandomEvent(1)">Stadt</button>
+  <button role="button" class="btn btn-dark-green col-sm-2" (click)="getRandomEvent(2)">Wald</button>
+  <button role="button" class="btn btn-light-green col-sm-2" (click)="getRandomEvent(3)">Wiese</button>
+  <button role="button" class="btn btn-dirty col-sm-2" (click)="getRandomEvent(4)">Feldweg</button>
+  <button role="button" class="btn btn-mountain col-sm-2" (click)="getRandomEvent(5)">Gebirge</button>
+  <button role="button" class="btn btn-cave col-sm-2" (click)="getRandomEvent(6)">Höhle</button>
+</div>
+
+
+
+
+
+<div class="card" id="eventcard">
+    <div class="card-header">Zufällige Events</div>
+    <div class="card-body">
+      <div class="card-block">
+        <h4 class="card-title">Eventgenerator</h4>
+        <div *ngIf="!eventGenerated" class="card-text">
+          <p>Klicke auf eine Umgebungsart, um ein entsprechendes Event zu generieren...</p>
+        </div>
+          <div *ngIf="eventGenerated" class="card-text">
+            <p><span class="label"><b>Event:</b></span>
+              <br> {{ event.event }}</p>
+            <p><span class="label"><b>Monster:</b></span><br> {{ event.monsters }}</p>
+            <p><span class="label"><b>Loot:</b></span><br> {{ event.loot }}</p>
+            <p>
+                <span class="badge badge-city" *ngIf="event.city">Stadt</span>
+                <span class="badge badge-dark-green" *ngIf="event.forest">Wald</span>
+                <span class="badge badge-light-green" *ngIf="event.grassland">Wiese</span>
+                <span class="badge badge-dirty" *ngIf="event.road">Feldweg</span>
+                <span class="badge badge-mountain" *ngIf="event.mountains">Gebirge</span>
+                <span class="badge badge-cave" *ngIf="event.cave">Höhle</span>
+            </p>
+            <ul id="eventHeroes" class="row align-items-center">
+              <li *ngFor="let eventHero of eventHeroes; let i = index">
+                  <button type="button" class="btn btn-outline-info" (click)='addItemToKampf(eventHero)'><fa name="plus"></fa>  {{ eventHero.name }}</button>
+              </li>
+            </ul>
+          </div>
+      </div>
+
+
+
+     
+    </div>
+</div>
