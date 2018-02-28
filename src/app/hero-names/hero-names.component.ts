@@ -15,7 +15,7 @@ export class HeroNamesComponent implements OnInit {
   }
 
   grabNames(): void {
-  $.get('https://cors.now.sh/http://www.dmmuse.com/NameDump.aspx', function(data) {
+  $.get('https://crossorigin.me/http://www.dmmuse.com/NameDump.aspx', function(data) {
     
     //console.log(data);  
     var html = $.parseHTML(data); 
