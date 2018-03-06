@@ -92,7 +92,7 @@ export class HeroesComponent implements OnInit {
 
 
   addFekide(): void {
-    for(var i = 0; i < 8; i++) {
+    for(var i = 0; i < 9; i++) {
       this.heroService.getHero(300+i)
         .subscribe(hero => this.kampf.push(hero));
       }
