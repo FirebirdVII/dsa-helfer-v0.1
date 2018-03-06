@@ -701,7 +701,11 @@ export class InMemoryDataService implements InMemoryDbService {
       beschreibung: 'Willenskraft 10, Geschichtswissen 7, Magiekunde 9' },
       { id: 307, name: 'Greyham', ini: 14, maxlep: 25, lep: 25, vw: 8, rs: '0', 
       attacke: 'AT 14 Wurfdolch 1W6+1 2/10/15', werte: 'MU12, KL12, IN14, CH11, FF14, GE15, KO10, KK12', 
-      beschreibung: 'Sinnesschärfe 9, Taschendiebstahl 7, Verbergen 10, Gassenwissen 7, Überreden 7, Verkleiden 8, Fährtensuchen 8, Heilkunde Wunden 7, Schlösserknacken 7' }
+      beschreibung: 'Sinnesschärfe 9, Taschendiebstahl 7, Verbergen 10, Gassenwissen 7, Überreden 7, Verkleiden 8, Fährtensuchen 8, Heilkunde Wunden 7, Schlösserknacken 7' },
+      { id: 308, name: 'Viola', ini: 14, maxlep: 28, lep: 28, vw: 9, rs: '0', 
+      attacke: 'AT 15 Wolfsmesser 1W6+3 mittel', werte: 'MU14, KL9, IN14, CH10, FF14, GE14, KO13, KK12', 
+      beschreibung: 'Körperbeherrschung 7, Tierkunde 8' },
+
     ];
 
     const kampf = [
