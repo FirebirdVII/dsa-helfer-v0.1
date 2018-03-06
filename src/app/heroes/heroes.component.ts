@@ -77,7 +77,7 @@ export class HeroesComponent implements OnInit {
   addAltdorf(): void {
     for(var i = 0; i < 4; i++) {
     this.heroService.getHero(380+i)
-      .subscribe(hero => this.kampf.push(hero));
+      .subscribe(hero => this.addItemToKampf(hero));
     }
     this.disabledHeroes = true;
   }
@@ -85,7 +85,7 @@ export class HeroesComponent implements OnInit {
   addReunion(): void {
     for(var i = 0; i < 6; i++) {
       this.heroService.getHero(390+i)
-        .subscribe(hero => this.kampf.push(hero));
+        .subscribe(hero => this.addItemToKampf(hero));
       }
       this.disabledHeroes = true;
     }
@@ -94,7 +94,7 @@ export class HeroesComponent implements OnInit {
   addFekide(): void {
     for(var i = 0; i < 9; i++) {
       this.heroService.getHero(300+i)
-        .subscribe(hero => this.kampf.push(hero));
+        .subscribe(hero => this.addItemToKampf(hero));
       }
       this.disabledHeroes = true;
     }
