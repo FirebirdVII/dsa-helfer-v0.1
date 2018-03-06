@@ -40,6 +40,7 @@ export class HeroesComponent implements OnInit {
         this.heroes.push(hero);
       });
   }
+  
 
   delete(hero: Hero): void {
     this.heroes = this.heroes.filter(h => h !== hero);
@@ -70,6 +71,7 @@ export class HeroesComponent implements OnInit {
 
   deleteItemFromKampf(hero: Hero): void {
     this.kampf = this.kampf.filter(h => h !== hero);
+    this.heroService.deleteKampfHero(hero).subscribe();
   }
 
   addAltdorf(): void {
