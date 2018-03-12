@@ -60,3 +60,43 @@
       min-width: 60px;
     }
   }
+
+  #titlecard .row .card{
+    padding: 0;
+}
+
+#titlecard .row {
+    -webkit-box-sizing: initial;
+    -moz-box-sizing: initial;
+    box-sizing:content-box;
+    margin: 0.7em 0 1.3em 0;
+    padding: 0;
+}
+#titlecard .card-img-top {
+    object-fit: cover;
+}
+
+#titlecard .musiclink {
+    margin: 0 0.7em;
+  }
+  
+#titlecard .musiclink:first-child {
+    margin: 0 0.7em 0 0;
+  }
+  
+#titlecard .musiclink:last-child {
+    margin: 0 0 0 0.7em;
+}
+
+#titlecard .card-img-top {
+    border-bottom: 1px solid rgba(0,0,0,.125);
+}
+
+#titlecard {
+    margin: 0.7em 0 1.3em 0;
+
+}
+
+#titlecard a, #titlecard p {
+    font-size: 1rem;
+}
