@@ -76,15 +76,15 @@
     object-fit: cover;
 }
 
-#titlecard .musiclink {
+#titlecard .generallinks {
     margin: 0 0.7em;
   }
   
-#titlecard .musiclink:first-child {
+#titlecard .generallinks:first-child {
     margin: 0 0.7em 0 0;
   }
   
-#titlecard .musiclink:last-child {
+#titlecard .generallinks:last-child {
     margin: 0 0 0 0.7em;
 }
 
