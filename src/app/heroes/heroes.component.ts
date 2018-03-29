@@ -64,8 +64,10 @@ export class HeroesComponent implements OnInit {
   }
 
   addItemToKampf(hero: Hero): void {
-    this.heroService.addHeroToKampf(hero)
-      .subscribe(hero => this.kampf.push(hero));
+    if(this.kampf.indexOf(hero) == -1) {
+      this.heroService.addHeroToKampf(hero)
+        .subscribe(hero => this.kampf.push(hero));
+    }
   }
 
 
