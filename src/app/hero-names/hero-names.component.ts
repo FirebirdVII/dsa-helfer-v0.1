@@ -24,7 +24,7 @@ export class HeroNamesComponent implements OnInit {
     //console.log($(html).filter("select").attr("id"));
     //console.log($('#results').html(jQuery(data).find('#result').html())); 
     //$('#results').append(html);
-    $('#results').html($('#ctl00_ContentPlaceHolder1_lbl1', html));
+    // $('#results').html($('#ctl00_ContentPlaceHolder1_lbl1', html));
     //var namesString = $('#ctl00_ContentPlaceHolder1_lbl1', html);
 
     var content = $('#results').html().split('<br>');
