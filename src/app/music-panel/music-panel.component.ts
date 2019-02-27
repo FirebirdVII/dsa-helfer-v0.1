@@ -12,7 +12,9 @@ export class MusicPanelComponent implements OnInit {
   constructor(private heroService: HeroService) { }
 
   ngOnInit() {
-    $(".type-youtube").append('<span class="badge badge-youtube">YT</span>');
-    $(".type-spotify").append('<span class="badge badge-spotify">S</span>');
+    $(document).ready(function () {
+      $(".type-youtube").append('<span class="badge badge-youtube">YT</span>');
+      $(".type-spotify").append('<span class="badge badge-spotify">S</span>');
+    });
   }
 }
