@@ -47,15 +47,12 @@
 }
 
 
-.type-youtube:after {
-    content: "  YT";
-    color: #ff0000;
+.label-youtube {
+    background-color: #ff0000;
 }
 
-
-.type-spotify:after {
-    content: "  S";
-    color: #1db954;
+.label-spotify {
+    background-color: #1db954;
 }
 
 @media (min-width: 34em) {
