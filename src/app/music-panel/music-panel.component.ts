@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { HeroService } from '../hero.service';
-import { $ } from 'jquery';
 
 @Component({
   selector: 'app-music-panel',
