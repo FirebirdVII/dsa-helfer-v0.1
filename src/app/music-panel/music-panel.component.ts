@@ -11,7 +11,7 @@ export class MusicPanelComponent implements OnInit {
   constructor(private heroService: HeroService) { }
 
   ngOnInit() {
-    $('.type-youtube').append('<span class="label label-danger" style="">YT</span>');
-    $('.type-spotify').append('<span class="label label-success" style="">S</span>');
+    $(".type-youtube").append("<span class=label label-danger'>YT</span>");
+    $(".type-spotify").append("<span class='label label-success'>S</span>");
   }
 }
