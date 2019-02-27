@@ -47,12 +47,14 @@
 }
 
 
-.label-youtube {
+.badge-youtube {
     background-color: #ff0000;
+    padding-left: 2em;
 }
 
-.label-spotify {
+.badge-spotify {
     background-color: #1db954;
+    padding-left: 2em;
 }
 
 @media (min-width: 34em) {
