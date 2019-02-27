@@ -46,7 +46,7 @@
     font-size: 1rem;
 }
 
-
+/**
 .badge-youtube {
     background-color: #fb5050 !important;
     color: white !important;
@@ -57,7 +57,7 @@
     background-color: #76b852 !important;
     color: white !important;
     float: right;
-}
+}**/
 
 @media (min-width: 34em) {
     .card-columns {
