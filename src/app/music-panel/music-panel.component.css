@@ -51,14 +51,12 @@
     background-color: #ff0000 !important;
     color: white !important;
     float: right;
-    padding-left: 2em;
 }
 
 .badge-spotify {
     background-color: #1db954 !important;
     color: white !important;
     float: right;
-    padding-left: 2em;
 }
 
 @media (min-width: 34em) {
